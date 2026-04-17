@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: knownfor-dotcom
+    runtime: static
+    # Point at main once merged; deploy previews use pullRequestPreviewsEnabled.
+    branch: main
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./out
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

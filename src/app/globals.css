@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #30312b;
+  --color-cream: #f3f6e9;
+  --color-sage: #ccd1ba;
+  --color-neon: #e4ff5a;
+  --color-neon-soft: #def663;
+
+  --font-serif: "Radley", ui-serif, Georgia, serif;
+  --font-sans: "Polymath Text Regular", "Polymath Text Regular Placeholder",
+    ui-sans-serif, system-ui, sans-serif;
+  --font-sans-bold: "Polymath Text Bold", "Polymath Text Bold Placeholder",
+    ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Radley (serif display) */
+@font-face {
+  font-family: "Radley";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/radley/v24/LYjDdGzinEIjCN1NqQNFlVs.woff2)
+    format("woff2");
+}
+@font-face {
+  font-family: "Radley";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/radley/v24/LYjBdGzinEIjCN1NojNHjV8.woff2)
+    format("woff2");
+}
+
+/* Polymath Text (sans, custom) — pulled from Framer CDN. Replace with self-hosted copies later. */
+@font-face {
+  font-family: "Polymath Text Regular";
+  src: url("https://framerusercontent.com/assets/wIa7a9sPetHrOj4lrWSbu6JKpps.woff2")
+    format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Polymath Text Bold";
+  src: url("https://framerusercontent.com/assets/EhI0qZiwRfe6gfpDMAG2kXHxx0A.woff2")
+    format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Polymath Text Italic";
+  src: url("https://framerusercontent.com/assets/QbtsRf5KljR29HpJvzMYFgbbZU.woff2")
+    format("woff2");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Polymath Text Regular Placeholder";
+  src: local("Arial");
+  ascent-override: 96.42%;
+  descent-override: 28.12%;
+  line-gap-override: 0%;
+  size-adjust: 99.56%;
+}
+@font-face {
+  font-family: "Polymath Text Bold Placeholder";
+  src: local("Arial");
+  ascent-override: 93.49%;
+  descent-override: 27.27%;
+  line-gap-override: 0%;
+  size-adjust: 102.68%;
+}
+
+html,
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-sans-bold);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.95rem 1.9rem;
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-sans-bold);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn-pill:hover {
+  background: #1f2019;
+}
+
+.btn-neon {
+  background: var(--color-neon);
+  color: var(--color-ink);
+}
+.btn-neon:hover {
+  background: var(--color-neon-soft);
+}
