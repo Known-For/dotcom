@@ -4,6 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Get Known For What You Do Best",
   description: "Effortless thought leadership. Claim your expertise.",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     title: "Get Known For What You Do Best",

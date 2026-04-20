@@ -31,16 +31,20 @@ Keep Framer live until Render's preview URL looks right, then flip DNS.
 
 ## Contact form
 
-`src/components/ContactForm.tsx` currently posts to a Formspree placeholder URL. Replace `https://formspree.io/f/your-id` with a real Formspree (or other) endpoint before launch, or wire up a custom `/api/contact` route (requires switching off `output: "export"` and using a Render Web Service instead of Static).
+`src/components/ContactForm.tsx` submits via [`@formspree/react`](https://github.com/formspree/formspree-js/tree/master/packages/formspree-react) to Formspree form `xreraqbb`. If the form ever needs to move to a different endpoint, update the `useForm("xreraqbb")` call.
 
 ## Assets still served from Framer's CDN
 
-The following are referenced from `framerusercontent.com` for the first cut:
+The following are still referenced from `framerusercontent.com`:
 
-- Adam Rich headshot (`KRnr7sE4Y9lnCm7ivx9rRrdbXU.jpeg`)
-- Polymath Text font family (Regular / Bold / Italic woff2 files)
+- Adam Rich headshot (`KRnr7sE4Y9lnCm7ivx9rRrdbXU.jpeg`) — `src/components/FounderNote.tsx`
+- Polymath Text font family (Regular / Bold / Italic woff2 files) — `src/app/globals.css`
 
-Before shutting down the Framer site, download these and drop them under `public/` so we are not dependent on Framer's CDN. Update `globals.css` and `FounderNote.tsx` to point at the local paths.
+Before shutting down the Framer site, download these and drop them under `public/` (e.g. `public/fonts/` and `public/images/adam-rich.jpg`) and update the references so we aren't dependent on Framer's CDN.
+
+## Brand assets
+
+The source brand files live under `Final Assets/` (logos, symbols, motifs, patterns in multiple color variants and formats). The PNGs the site actually loads are copied into `public/brand/` and `public/favicon.png`.
 
 ## Original Framer export
 

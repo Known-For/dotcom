@@ -1,20 +1,21 @@
-export default function Logo({ className = "h-7 w-auto" }: { className?: string }) {
+import Image from "next/image";
+
+export default function Logo({
+  variant = "ink",
+  className = "h-7 w-auto",
+}: {
+  variant?: "ink" | "white";
+  className?: string;
+}) {
+  const src = variant === "white" ? "/brand/logo-white.png" : "/brand/logo-ink.png";
   return (
-    <svg
+    <Image
+      src={src}
+      alt="Known For"
+      width={4189}
+      height={705}
+      priority
       className={className}
-      viewBox="0 0 220 40"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="Known For"
-    >
-      <text
-        x="0"
-        y="30"
-        fontFamily="Radley, Georgia, serif"
-        fontSize="32"
-        fill="currentColor"
-      >
-        Known For
-      </text>
-    </svg>
+    />
   );
 }
