@@ -32,27 +32,24 @@
     format("woff2");
 }
 
-/* Polymath Text (sans, custom) — pulled from Framer CDN. Replace with self-hosted copies later. */
+/* Polymath Text (sans, custom) — self-hosted from public/fonts/. */
 @font-face {
   font-family: "Polymath Text Regular";
-  src: url("https://framerusercontent.com/assets/wIa7a9sPetHrOj4lrWSbu6JKpps.woff2")
-    format("woff2");
+  src: url("/fonts/polymath-text-regular.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: "Polymath Text Bold";
-  src: url("https://framerusercontent.com/assets/EhI0qZiwRfe6gfpDMAG2kXHxx0A.woff2")
-    format("woff2");
+  src: url("/fonts/polymath-text-bold.woff2") format("woff2");
   font-display: swap;
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
   font-family: "Polymath Text Italic";
-  src: url("https://framerusercontent.com/assets/QbtsRf5KljR29HpJvzMYFgbbZU.woff2")
-    format("woff2");
+  src: url("/fonts/polymath-text-italic.woff2") format("woff2");
   font-display: swap;
   font-style: italic;
   font-weight: 400;

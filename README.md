@@ -33,14 +33,14 @@ Keep Framer live until Render's preview URL looks right, then flip DNS.
 
 `src/components/ContactForm.tsx` submits via [`@formspree/react`](https://github.com/formspree/formspree-js/tree/master/packages/formspree-react) to Formspree form `xreraqbb`. If the form ever needs to move to a different endpoint, update the `useForm("xreraqbb")` call.
 
-## Assets still served from Framer's CDN
+## Fonts and imagery
 
-The following are still referenced from `framerusercontent.com`:
+All fonts and the Adam Rich headshot are self-hosted:
 
-- Adam Rich headshot (`KRnr7sE4Y9lnCm7ivx9rRrdbXU.jpeg`) — `src/components/FounderNote.tsx`
-- Polymath Text font family (Regular / Bold / Italic woff2 files) — `src/app/globals.css`
+- `public/fonts/polymath-text-{regular,bold,italic}.woff2` — referenced from `src/app/globals.css`
+- `public/images/adam-rich.jpg` — referenced from `src/components/FounderNote.tsx`
 
-Before shutting down the Framer site, download these and drop them under `public/` (e.g. `public/fonts/` and `public/images/adam-rich.jpg`) and update the references so we aren't dependent on Framer's CDN.
+Polymath Text is a commercial Pangram Pangram typeface. Keep a valid webfont license on file; Framer's bundled license does not transfer to a self-hosted site.
 
 ## Brand assets
 
