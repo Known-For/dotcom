@@ -2,12 +2,27 @@ services:
   - type: web
     name: knownfor-dotcom
     runtime: static
-    # Point at main once merged; deploy previews use pullRequestPreviewsEnabled.
+    # This file documents the live standalone service configuration.
     branch: main
     buildCommand: npm ci && npm run build
     staticPublishPath: ./out
-    pullRequestPreviewsEnabled: true
+    pullRequestPreviewsEnabled: false
     headers:
+      - path: /_next/static/**/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /fonts/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /brand/*
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /favicon.png
+        name: Cache-Control
+        value: public, max-age=2592000
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
