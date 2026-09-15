@@ -29,6 +29,12 @@ Render reads `render.yaml` on push. The service is a Static Site:
 
 Keep Framer live until Render's preview URL looks right, then flip DNS.
 
+If the service was created with **New → Static Site** instead of from a
+Blueprint, Render does not apply `render.yaml` after creation. Mirror its
+header rules in **Render → dotcom → Headers**. The long cache lifetime is only
+for fingerprinted `/_next/static/` files and fonts; replaceable images use 30
+days.
+
 ## Contact form
 
 `src/components/ContactForm.tsx` submits via [`@formspree/react`](https://github.com/formspree/formspree-js/tree/master/packages/formspree-react) to Formspree form `xreraqbb`. If the form ever needs to move to a different endpoint, update the `useForm("xreraqbb")` call.
