@@ -2,11 +2,11 @@ services:
   - type: web
     name: knownfor-dotcom
     runtime: static
-    # Point at main once merged; deploy previews use pullRequestPreviewsEnabled.
+    # This file documents the live standalone service configuration.
     branch: main
     buildCommand: npm ci && npm run build
     staticPublishPath: ./out
-    pullRequestPreviewsEnabled: true
+    pullRequestPreviewsEnabled: false
     headers:
       - path: /_next/static/**/*
         name: Cache-Control
